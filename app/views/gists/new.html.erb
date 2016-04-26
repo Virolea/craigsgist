@@ -1,0 +1,7 @@
+<%= simple_form_for @gist do |f| %>
+  <%= f.input :description %>
+  <%= f.input :title %>
+  <%= f.input :code %>
+  <%= f.input :public %>
+  <%= f.submit "Upload your gist!" %>
+<% end %>
