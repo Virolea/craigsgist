@@ -16,3 +16,17 @@
   width: 100%;
   padding: 20px;
 }
+.gist-title {
+  margin-bottom: 0;
+}
+.gist-title-wrapper {
+  input {
+    width: 250px;
+    height: 40px;
+  }
+  padding: 10px;
+  background: #F7F7F7;
+}
+.gist-privacy-wrapper {
+  padding: 10px;
+}

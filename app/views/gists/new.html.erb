@@ -1,13 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="devise-form">
         <%= simple_form_for @gist do |f| %>
           <%= f.input :description, placeholder: "gist description...", label: false %>
-          <%= f.input :title, placeholder: "Filename including extension", label:false %>
+
+          <div class="gist-title-wrapper">
+            <%= f.input :title, placeholder: "Filename including extension", label:false, wrapper_html: { class: 'gist-title' } %>
+          </div>
           <div id="code" style="width: 100%; height: 200px; margin-bottom: 15px;"></div>
+
           <%= f.input :code, label: false %>
-          <%= f.input :public %>
+          <%= f.input :public, wrapper_html: { class: 'gist-privacy' }, input_html: { id: 'privacy-checkbox' } %>
+
+          <div class="gist-privacy-wrapper text-center">
+            <a href="#" class="btn btn-primary" id="private-check">Private</a>
+            <a href="#" class="btn" id="public-check">Public</a>
+          </div>
+
           <%= f.submit "Upload your gist!", class: "btn btn-success btn-form" %>
         <% end %>
       </div>
@@ -19,17 +29,37 @@
   <%= javascript_tag do %>
     $(function(){
       var textarea = $('textarea');
+      var checkbox = $('.gist-privacy');
       textarea.hide();
+      checkbox.hide();
+
+      $('#private-check').click(function(e) {
+        e.preventDefault()
+        $('#public-check').removeClass("btn-primary");
+        $('#private-check').addClass("btn-primary");
+        $('#privacy-checkbox').attr("checked", false);
+      });
+
+      $('#public-check').click(function(e) {
+        e.preventDefault()
+        $('#public-check').addClass("btn-primary");
+        $('#private-check').removeClass("btn-primary");
+        $('#privacy-checkbox').attr("checked", true);
+      });
 
       var editor = ace.edit("code");
       editor.setTheme("ace/theme/chrome");
       editor.getSession().setMode("ace/mode/javascript");
+
+
 
       editor.getSession().on('change', function(){
         textarea.val(editor.getSession().getValue());
       });
 
       textarea.val(editor.getSession().getValue());
+
+
     });
   <% end %>
 <% end %>
