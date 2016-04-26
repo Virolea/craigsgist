@@ -3,7 +3,7 @@ ruby '2.3.0'
 
 gem 'rails', '4.2.5.1'
 gem 'puma'
-gem 'pg'
+gem 'mysql2'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
@@ -23,8 +23,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do
