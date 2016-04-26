@@ -9,8 +9,9 @@
       <div class="col-xs-12 col-md-6">
         <div class="home-infos">
           <h1>Welcome to Craigsgist</h1>
-          <%= link_to "Sign up", '#', class: "btn btn-success" %>
-          <%= link_to "Sign in", '#', class: "btn btn-default" %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default" %>
+          <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-danger", method: :delete %>
           <%= %>
         </div>
       </div>

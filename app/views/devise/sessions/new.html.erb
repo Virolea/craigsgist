@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="devise-form">
+        <h2 class="text-center">Log in</h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: 'input-override' } }) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, placeholder: "email", autofocus: true, label: false %>
+            <%= f.input :password, placeholder: "password", label: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "btn btn-success btn-form" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
+
