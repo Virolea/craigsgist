@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426143203) do
+ActiveRecord::Schema.define(version: 20160426143410) do
 
   create_table "gists", force: :cascade do |t|
     t.datetime "created_at",              null: false
@@ -19,7 +19,11 @@ ActiveRecord::Schema.define(version: 20160426143203) do
     t.string   "description", limit: 255
     t.string   "title",       limit: 255
     t.string   "code",        limit: 255
+    t.integer  "user_id",     limit: 4
+    t.boolean  "public"
   end
+
+  add_index "gists", ["user_id"], name: "index_gists_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -40,4 +44,5 @@ ActiveRecord::Schema.define(version: 20160426143203) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "gists", "users"
 end
