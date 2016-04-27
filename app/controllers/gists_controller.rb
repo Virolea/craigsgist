@@ -1,6 +1,14 @@
 class GistsController < ApplicationController
   before_action :set_gist, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @gists = policy_scope(Gist)
+    if !params[:search].blank?
+      @gists = Gist.search(params[:search])
+      @gists = @gists.where(public: true)
+    end
+  end
+
   def show
     @comment = Comment.new
     authorize @gist
