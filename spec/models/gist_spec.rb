@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Gist do
+RSpec.describe Gist, type: :model do
   it "is valid with a description, title, code and user" do
     user = User.new
     gist = Gist.new(
