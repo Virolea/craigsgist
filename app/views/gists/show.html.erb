@@ -41,7 +41,7 @@
 
       editor.setReadOnly(true);
       editor.setTheme("ace/theme/chrome");
-      editor.getSession().setMode("ace/mode/javascript");
+      editor.getSession().setMode("ace/mode/<%= @gist.language %>");
 
       editor.setOptions({
         maxLines: Infinity

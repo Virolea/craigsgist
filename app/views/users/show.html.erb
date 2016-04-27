@@ -12,25 +12,20 @@
     $(function(){
       var editor;
 
-      $('.code').each(function( index ) {
+      $('.code').each( function(index) {
         editor = ace.edit(this);
         editor.setReadOnly(true);
 
+        var language = $(this).prev().attr('class');
+        console.log(language);
+
         editor.setTheme("ace/theme/chrome");
-        editor.getSession().setMode('ace/mode/csharp');
+        editor.getSession().setMode("ace/mode/" + language);
 
         editor.setOptions({
-          maxLines: 3
+          maxLines: 5
         });
-
       });
-     // editor.setReadOnly(true);
-      //editor.setTheme("ace/theme/chrome");
-      //editor.getSession().setMode("ace/mode/javascript");
-
-      //editor.setOptions({
-      //  maxLines: 5;
-      //});
     });
   <% end %>
 <% end %>

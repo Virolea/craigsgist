@@ -3,7 +3,8 @@
     <%= f.input :description, placeholder: "gist description...", label: false %>
 
     <div class="gist-title-wrapper">
-      <%= f.input :title, placeholder: "Filename including extension", label:false, wrapper_html: { class: 'gist-title' } %>
+      <%= f.input :title, placeholder: "Filename including extension", label:false, wrapper_html: { class: 'gist-editor-header' } %>
+      <%= f.input :language, collection: Gist::LANGUAGES , prompt: "Select language", label: false, required: false, wrapper_html: { class: 'gist-editor-header' } %>
     </div>
     <div id="code" style="width: 100%; height: 200px; margin-bottom: 15px;"></div>
 
