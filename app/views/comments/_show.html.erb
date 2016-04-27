@@ -1,4 +1,8 @@
 <div class="comment">
-  <h4><%= link_to comment.user.username, user_path(comment.user) %></h4>
-  <p><%= comment.content %></p>
+  <div class="comment-header">
+    <h4><%= image_tag "http://placehold.it/50x50", class: "avatar" %> <%= link_to comment.user.username, user_path(comment.user) %></h4>
+  </div>
+  <div class="comment-content">
+    <p><%= comment.content %></p>
+  </div>
 </div>
