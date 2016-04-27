@@ -2,6 +2,12 @@
   background: $gray-lighter;
   padding: 20px;
 }
+.gist-header-infos {
+  display: inline-block;
+}
+.gist-header-actions {
+  display: inline-block;
+}
 .gist-container {
   background: white;
   padding: 20px;
@@ -9,7 +15,6 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 40px;
-  position: relative;
 }
 .gist-code {
   width: 100%;
@@ -21,4 +26,16 @@
 .gist-description {
   font-style: italic;
   font-weight: lighter;
+}
+.new-gist {
+  color: white;
+  margin-bottom: 0;
+}
+.gist-card {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
 }

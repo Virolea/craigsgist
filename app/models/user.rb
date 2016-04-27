@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :gists
+
+  validates :username, uniqueness: true
+
+  def to_param
+    username
+  end
 end

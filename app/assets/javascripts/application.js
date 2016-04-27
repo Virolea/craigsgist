@@ -2,4 +2,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ace-rails-ap
+//= require ace/theme-chrome
+//= require ace/mode-javascript
+//= require ace/mode-ruby
+//= require ace/mode-python
+//= require ace/mode-php
 //= require_tree .

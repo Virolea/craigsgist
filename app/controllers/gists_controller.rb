@@ -1,5 +1,10 @@
 class GistsController < ApplicationController
-  before_action :set_gist, only: :show
+  before_action :set_gist, only: [:show, :edit, :update, :destroy]
+
+  def show
+    authorize @gist
+  end
+
   def new
     @gist = Gist.new
     authorize @gist
@@ -16,8 +21,24 @@ class GistsController < ApplicationController
     end
   end
 
-  def show
+  def edit
     authorize @gist
+  end
+
+  def update
+    authorize @gist
+    if @gist.update(gist_params)
+      flash[:notice] = "Gist updated !"
+      redirect_to gist_path(@gist)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    authorize @gist
+    @gist.destroy
+    redirect_to current_user
   end
 
   private
