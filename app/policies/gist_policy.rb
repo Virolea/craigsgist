@@ -1,7 +1,7 @@
 class GistPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.where(public: true)
     end
   end
 
