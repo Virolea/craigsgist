@@ -1,5 +1,15 @@
 <div class="gist-header">
-  <p><h3><%= link_to @gist.user.username, user_path(@gist.user) %></h3> / <strong><%= @gist.title %></strong></p>
+  <div class="gist-header-infos">
+    <p><h3><%= link_to @gist.user.username, user_path(@gist.user) %></h3> / <strong><%= @gist.title %></strong></p>
+  </div>
+  <% if @gist.user == current_user %>
+    <div class="gist-header-actions">
+      <ul class="list-inline list-unstyled">
+        <li><%= link_to "Edit", edit_gist_path(@gist), class: "btn btn-default" %></li>
+        <li><%= link_to "Delete", gist_path(@gist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></li>
+      </ul>
+    </div>
+  <% end %>
 </div>
 
 <div class="container">

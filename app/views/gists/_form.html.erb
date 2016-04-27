@@ -1,0 +1,20 @@
+<div class="devise-form">
+  <%= simple_form_for @gist do |f| %>
+    <%= f.input :description, placeholder: "gist description...", label: false %>
+
+    <div class="gist-title-wrapper">
+      <%= f.input :title, placeholder: "Filename including extension", label:false, wrapper_html: { class: 'gist-title' } %>
+    </div>
+    <div id="code" style="width: 100%; height: 200px; margin-bottom: 15px;"></div>
+
+    <%= f.input :code, label: false %>
+    <%= f.input :public, wrapper_html: { class: 'gist-privacy' }, input_html: { id: 'privacy-checkbox' } %>
+
+    <div class="gist-privacy-wrapper text-center">
+      <a href="#" class="btn btn-primary" id="private-check">Private</a>
+      <a href="#" class="btn" id="public-check">Public</a>
+    </div>
+
+    <%= f.submit "Upload your gist!", class: "btn btn-success btn-form" %>
+  <% end %>
+</div>

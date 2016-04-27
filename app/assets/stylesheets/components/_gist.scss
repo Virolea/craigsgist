@@ -2,6 +2,12 @@
   background: $gray-lighter;
   padding: 20px;
 }
+.gist-header-infos {
+  display: inline-block;
+}
+.gist-header-actions {
+  display: inline-block;
+}
 .gist-container {
   background: white;
   padding: 20px;
