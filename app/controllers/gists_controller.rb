@@ -2,6 +2,7 @@ class GistsController < ApplicationController
   before_action :set_gist, only: [:show, :edit, :update, :destroy]
 
   def show
+    @comment = Comment.new
     authorize @gist
   end
 

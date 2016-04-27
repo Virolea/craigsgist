@@ -20,6 +20,16 @@
         <p class="gist-description"><%= @gist.description %></p>
         <div id="gist-code"><%= @gist.code %></div>
       </div>
+
+      <div class="comment-form">
+        <%= render 'comments/form', gist: @gist, comment: @comment%>
+      </div>
+
+      <div id="comments">
+        <% @gist.comments.each do |comment| %>
+          <%= render 'comments/show', comment: comment %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
