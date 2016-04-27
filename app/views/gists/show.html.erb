@@ -1,5 +1,5 @@
 <div class="gist-header">
-  <p><h3><%= @gist.user.username %></h3> / <strong><%= @gist.title %></strong></p>
+  <p><h3><%= link_to @gist.user.username, user_path(@gist.user) %></h3> / <strong><%= @gist.title %></strong></p>
 </div>
 
 <div class="container">

@@ -1,1 +1,36 @@
-<h1><%= @user.username %></h1>
+<div class="user-header">
+  <h1><%= @user.username %></h1>
+  <p><i class="fa fa-file-o"></i> <%= @user.gists.count %> Gists</p>
+</div>
+
+<% @user.gists.each do |gist| %>
+  <%= render 'gists/gist_card', gist: gist %>
+<% end %>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(function(){
+      var editor;
+
+      $('.code').each(function( index ) {
+        editor = ace.edit(this);
+        editor.setReadOnly(true);
+
+        editor.setTheme("ace/theme/chrome");
+        editor.getSession().setMode('ace/mode/csharp');
+
+        editor.setOptions({
+          maxLines: 3
+        });
+
+      });
+     // editor.setReadOnly(true);
+      //editor.setTheme("ace/theme/chrome");
+      //editor.getSession().setMode("ace/mode/javascript");
+
+      //editor.setOptions({
+      //  maxLines: 5;
+      //});
+    });
+  <% end %>
+<% end %>
