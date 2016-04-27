@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersPolicy do
+RSpec.describe UserPolicy do
 
   let(:user) { User.new }
 
