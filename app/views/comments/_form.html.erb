@@ -1,4 +1,4 @@
-<%= simple_form_for([gist, comment]) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Comment" %>
+<%= simple_form_for([gist, comment], remote: true) do |f| %>
+  <%= f.input :content, placeholder: "Your comment...", label: false, required: false, input_html: { class: "input-override" } %>
+  <%= f.submit "Comment", class: "btn btn-success btn-form" %>
 <% end %>

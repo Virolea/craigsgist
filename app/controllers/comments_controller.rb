@@ -6,9 +6,15 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     authorize @comment
     if @comment.save
-      redirect_to gist_path(@gist)
+      respond_to do |format|
+        format.html { redirect_to gist_path(@gist) }
+        format.js
+      end
     else
-      render 'gists/show'
+      respond_to do |format|
+        format.html { render 'gists/show' }
+        format.js
+      end
     end
   end
 
