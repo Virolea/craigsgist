@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Gist, type: :model do
-  it "is valid with a description, title, code and user" do
+  it "is valid with a description, title, language, code and user" do
     user = User.new
     gist = Gist.new(
       description: "description",
       title: "title",
+      language: "ruby",
       code: "my code",
       user: user)
     expect(gist).to be_valid
