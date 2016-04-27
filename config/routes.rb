@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :gists
+
+  resources :users, only: :show
 end
