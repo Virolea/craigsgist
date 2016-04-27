@@ -15,23 +15,6 @@
       textarea.hide();
       checkbox.hide();
 
-      var editor = ace.edit("code");
-      editor.setTheme("ace/theme/chrome");
-      editor.getSession().setMode("ace/mode/javascript");
-
-
-
-      editor.getSession().on('change', function(){
-        textarea.val(editor.getSession().getValue());
-      });
-
-      textarea.val(editor.getSession().getValue());
-
-      var select = $('#gist_language');
-      select.change(function() {
-        editor.getSession().setMode("ace/mode/" + select.val());
-      });
-
       $('#private-check').click(function(e) {
         e.preventDefault()
         $('#public-check').removeClass("btn-primary");
@@ -46,7 +29,20 @@
         $('#privacy-checkbox').attr("checked", true);
       });
 
+      var editor = ace.edit("code");
+      editor.setTheme("ace/theme/chrome");
+      editor.getSession().setMode("ace/mode/javascript");
 
+      editor.getSession().on('change', function(){
+        textarea.val(editor.getSession().getValue());
+      });
+
+      textarea.val(editor.getSession().getValue());
+
+      var select = $('#gist_language');
+      select.change(function() {
+        editor.getSession().setMode("ace/mode/" + select.val());
+      });
 
     });
   <% end %>
