@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'pundit'
 gem 'ace-rails-ap'
+gem 'dusen'
 
 group :development, :test do
   gem 'binding_of_caller'

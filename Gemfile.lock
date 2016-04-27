@@ -63,6 +63,11 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dusen (0.6.1)
+      activerecord (>= 3.0)
+      edge_rider (>= 0.2.5)
+    edge_rider (0.3.1)
+      activerecord
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.7.0)
@@ -208,6 +213,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   devise
+  dusen
   factory_girl_rails
   faker
   figaro
