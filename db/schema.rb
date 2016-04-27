@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427134644) do
+ActiveRecord::Schema.define(version: 20160427163857) do
 
   create_table "comments", force: :cascade do |t|
-    t.string   "content",    limit: 255
+    t.text     "content",    limit: 65535
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "gist_id",    limit: 4
   end
 

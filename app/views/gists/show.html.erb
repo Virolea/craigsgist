@@ -26,7 +26,7 @@
       </div>
 
       <div id="comments">
-        <% @gist.comments.each do |comment| %>
+        <% @gist.comments.order(created_at: :desc).each do |comment| %>
           <%= render 'comments/show', comment: comment %>
         <% end %>
       </div>
