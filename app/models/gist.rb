@@ -3,4 +3,6 @@ class Gist < ActiveRecord::Base
   has_many :comments
 
   validates :user, :title, :description, :code, presence: true
+
+  LANGUAGES = %w(javascript php python ruby)
 end

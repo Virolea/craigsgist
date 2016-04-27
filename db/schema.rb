@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427130032) do
+ActiveRecord::Schema.define(version: 20160427134644) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content",    limit: 255
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160427130032) do
     t.text     "code",        limit: 65535
     t.integer  "user_id",     limit: 4
     t.boolean  "public"
+    t.string   "language",    limit: 255
   end
 
   add_index "gists", ["user_id"], name: "index_gists_on_user_id", using: :btree
