@@ -1,15 +1,16 @@
 .home-wrapper {
-  height: 100vh;
+  height: calc(100vh - 70);
   background: $blue;
   color: white;
 }
 .home-caption {
   padding: 30px;
+  margin-top: 60px;
   img {
     width: 100%;
   }
 }
 .home-infos {
   padding: 30px;
-
+  margin-top: 60px;
 }

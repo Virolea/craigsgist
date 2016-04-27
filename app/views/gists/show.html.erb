@@ -1,4 +1,34 @@
-<p><%= @gist.description %></p>
-<p><%= @gist.title %></p>
-<p><%= @gist.code %></p>
+<div class="gist-header">
+  <p><h3><%= @gist.user.username %></h3> / <strong><%= @gist.title %></strong></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="gist-container">
+        <h2 class="gist-title">/<%= @gist.title %></h2>
+        <p class="gist-description"><%= @gist.description %></p>
+        <div id="gist-code">
+          <%= @gist.code %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(function(){
+      var editor = ace.edit("gist-code");
+
+      editor.setReadOnly(true);
+      editor.setTheme("ace/theme/chrome");
+      editor.getSession().setMode("ace/mode/javascript");
+
+      editor.setOptions({
+        maxLines: Infinity
+      });
+    });
+  <% end %>
+<% end %>
 
