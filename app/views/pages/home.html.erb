@@ -1,17 +1,43 @@
 <div class="home-wrapper">
   <div class="container">
+    <h1 class="text-center">Welcome to CraigsGist</h1>
     <div class="row">
-      <div class="col-xs-hidden col-md-6">
+      <div class="hidden-xs hidden-sm col-sm-6 col-md-6">
         <div class="home-caption">
           <%= image_tag 'code-editor.png' %>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="home-infos">
-          <h1>Welcome to CraigsGist</h1>
-          <p>CraigsGist allows you to upload your gists</p>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default" %>
-          <%= %>
+          <div class="feature">
+            <div class="feature-image">
+              <%= image_tag "mac.png" %>
+            </div>
+            <div class="feature-text">
+              <p>Easily save your code snippets in any computer language you fancy. Our privacy settings let you keep secret what should be!</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-image">
+              <%= image_tag "eye.png" %>
+            </div>
+            <div class="feature-text">
+              <p>Search among all public gists availabel on the platform, it shouldn't be a problem finding what you are looking for!</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-image">
+              <%= image_tag "heart.png" %>
+            </div>
+            <div class="feature-text">
+              <p>Comment and give feedback on other peolpe's gists, take part in the community! </p>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-default" %>
+          </div>
         </div>
       </div>
     </div>
