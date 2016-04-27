@@ -7,6 +7,7 @@
       <ul class="list-inline list-unstyled">
         <li><%= link_to "Edit", edit_gist_path(@gist), class: "btn btn-default" %></li>
         <li><%= link_to "Delete", gist_path(@gist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></li>
+        <li><%= link_to "upload gist to Github", '#', class: "btn btn-default",  id: "github-upload" %></li>
       </ul>
     </div>
   <% end %>
