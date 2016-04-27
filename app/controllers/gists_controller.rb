@@ -45,7 +45,7 @@ class GistsController < ApplicationController
   private
 
   def gist_params
-    params.require(:gist).permit(:description, :title, :code, :public)
+    params.require(:gist).permit(:description, :title, :language, :code, :public)
   end
 
   def set_gist
