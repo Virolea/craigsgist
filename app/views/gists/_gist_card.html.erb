@@ -1,10 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <div class="gist-card">
-        <p class="<%= gist.language %>"><%= link_to gist.user.username, user_path(gist.user) %> / <%= link_to gist.title, gist_path(gist) %></p>
-        <div class="code" style="width: 100%; height: 100px;"><%= gist.code %></div>
-      </div>
-    </div>
-  </div>
+<div class="gist-card">
+  <p class="<%= gist.language %>"><%= link_to gist.user.username, user_path(gist.user) %> / <%= link_to gist.title, gist_path(gist) %></p>
+  <% gist.labels.each do |label| %>
+    <%= render 'labels/show', label: label %>
+  <% end %>
+  <div class="code" style="width: 100%; height: 100px;"><%= gist.code %></div>
 </div>

@@ -18,9 +18,13 @@
       <div class="gist-labels-container">
         <h3 class="text-center">Labels</h3>
         <ul id="labels" class="list-inline list-unstyled">
+        <% if @gist.labels.length == 0 %>
+          <p class="text-center">No label</p>
+        <% else %>
           <% @gist.labels.each do |label| %>
             <%= render 'labels/show', label: label %>
           <% end %>
+        <% end %>
         </ul>
         <% if @gist.user == current_user %>
           <%= render 'labels/form', gist: @gist, label: @label %>
