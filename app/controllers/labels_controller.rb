@@ -4,10 +4,14 @@ class LabelsController < ApplicationController
     @label = Label.new(label_params)
     @label.gist = @gist
     authorize @label
-    if @label.save
-      redirect_to gist_path(@gist)
+    if @gist.user == current_user
+      if @label.save
+        redirect_to gist_path(@gist)
+      else
+        render 'gists/show'
+      end
     else
-      render 'gists/show'
+      redirect_to gist_path(@gist)
     end
   end
 
