@@ -17,15 +17,13 @@
     <div class="col-xs-12 col-md-2">
       <div class="gist-labels-container">
         <h3 class="text-center">Labels</h3>
-        <ul class="list-inline list-unstyled">
+        <ul id="labels" class="list-inline list-unstyled">
           <% @gist.labels.each do |label| %>
             <%= render 'labels/show', label: label %>
           <% end %>
         </ul>
         <% if @gist.user == current_user %>
-          <%= simple_form_for([@gist, @label]) do |f| %>
-            <%= f.input :name, placeholder: "Add a Label", required: false, label: false %>
-          <% end %>
+          <%= render 'labels/form', gist: @gist, label: @label %>
         <% end %>
       </div>
     </div>
