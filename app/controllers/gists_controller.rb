@@ -10,6 +10,7 @@ class GistsController < ApplicationController
   end
 
   def show
+    @label = Label.new
     @comment = Comment.new
     authorize @gist
   end

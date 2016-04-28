@@ -14,7 +14,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="col-xs-12 col-md-2">
+      <div class="gist-container">
+        <h3 class="text-center">Labels</h3>
+        <ul class="list-inline list-unstyled">
+          <% @gist.labels.each do |label| %>
+            <%= render 'labels/show', label: label %>
+          <% end %>
+        </ul>
+        <%= simple_form_for([@gist, @label]) do |f| %>
+          <%= f.input :name, required: false, label: false %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8">
       <div class="gist-container">
         <h2 class="gist-title">/<%= @gist.title %></h2>
         <p class="gist-description"><%= @gist.description %></p>

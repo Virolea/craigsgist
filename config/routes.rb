@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :gists do
     resources :comments, only: :create
+    resources :labels, only: :create
   end
 
   resources :users, only: :show
