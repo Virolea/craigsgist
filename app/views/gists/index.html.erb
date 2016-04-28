@@ -1,6 +1,12 @@
-<% @gists.each do |gist| %>
- <%= render 'gists/gist_card', gist: gist %>
-<% end %>
+<div class="container">
+  <div class="row">
+  <% @gists.each do |gist| %>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <%= render 'gists/gist_card', gist: gist %>
+    </div>
+  <% end %>
+  </div>
+</div>
 
 <% content_for(:js) do %>
   <%= javascript_tag do %>

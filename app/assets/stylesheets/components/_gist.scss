@@ -39,3 +39,21 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 10px;
 }
+.gist-labels-container {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  h3 {
+    margin: 0;
+    padding: 10px;
+    background: #EBEBEB;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+  ul {
+    padding: 10px;
+  }
+}

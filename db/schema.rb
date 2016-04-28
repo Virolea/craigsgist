@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427163857) do
+ActiveRecord::Schema.define(version: 20160428140036) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20160427163857) do
 
   add_index "gists", ["user_id"], name: "index_gists_on_user_id", using: :btree
 
+  create_table "labels", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "gist_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "labels", ["gist_id"], name: "index_labels_on_gist_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -59,4 +68,5 @@ ActiveRecord::Schema.define(version: 20160427163857) do
   add_foreign_key "comments", "gists"
   add_foreign_key "comments", "users"
   add_foreign_key "gists", "users"
+  add_foreign_key "labels", "gists"
 end

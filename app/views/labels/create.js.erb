@@ -1,0 +1,8 @@
+<% if @label.errors.any? %>
+  $('#new_label').html("<%= j render 'labels/form', gist: @gist, label: @label %>");
+<% else %>
+  var new_label = $("<%= j render 'labels/show', label: @label %>").hide();
+  $('#labels').append(new_label);
+  new_label.toggle();
+  $('#label_name').val('');
+<% end %>
