@@ -7,4 +7,6 @@
 //= require ace/mode-ruby
 //= require ace/mode-python
 //= require ace/mode-php
+//= require ace/mode-swift
+//= require ace/mode-pascal
 //= require_tree .

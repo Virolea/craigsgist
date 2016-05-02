@@ -5,7 +5,7 @@ class Gist < ActiveRecord::Base
 
   validates :user, :title, :language, :description, :code, presence: true
 
-  LANGUAGES = %w(javascript php python ruby)
+  LANGUAGES = %w(javascript pascal php python ruby swift)
 
   search_syntax do
     search_by :text do |scope, phrases|
